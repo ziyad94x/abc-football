@@ -247,14 +247,14 @@ function StarRow() {
 function LogoBadge() {
   return (
     <div
-      className="mx-auto max-w-md rounded-[2rem] border bg-black p-5 shadow-2xl backdrop-blur sm:p-7"
+      className="mx-auto max-w-xl rounded-[2rem] border bg-black p-4 shadow-2xl backdrop-blur sm:p-5"
       style={{ borderColor: "rgba(184, 138, 46, 0.42)", boxShadow: "0 28px 70px rgba(7, 7, 7, 0.22)" }}
     >
-      <div className="rounded-[1.65rem] border px-5 py-6 text-center" style={{ borderColor: "rgba(215, 183, 101, 0.36)", backgroundColor: colors.black }}>
+      <div className="rounded-[1.65rem] border px-3 py-4 text-center sm:px-4 sm:py-5" style={{ borderColor: "rgba(215, 183, 101, 0.36)", backgroundColor: colors.black }}>
         <img
           src={logoSrc}
           alt="ABC Football - Aaron Bull Coaching & Football logo"
-          className="mx-auto h-auto w-full max-w-sm rounded-2xl object-contain"
+          className="mx-auto h-auto w-full max-w-lg rounded-2xl object-contain"
         />
         <p className="mt-5 text-xs font-black uppercase tracking-[0.24em]" style={{ color: colors.brightGold }}>
           Making football as easy as ABC
@@ -576,7 +576,7 @@ export default function ABCFCWebsite() {
                 src={logoSrc}
                 alt="ABC Football crest"
                 className="h-full w-full object-cover"
-                style={{ objectPosition: "center 18%", transform: "scale(2.0)" }}
+                style={{ objectPosition: "center 22%", transform: "scale(1.6)" }}
               />
             </div>
             <div>

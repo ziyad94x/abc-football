@@ -576,7 +576,7 @@ export default function ABCFCWebsite() {
                 src={logoSrc}
                 alt="ABC Football crest"
                 className="h-full w-full object-cover"
-                style={{ objectPosition: "center 18%", transform: "scale(2.6)" }}
+                style={{ objectPosition: "center 18%", transform: "scale(2.0)" }}
               />
             </div>
             <div>

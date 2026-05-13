@@ -247,14 +247,14 @@ function StarRow() {
 function LogoBadge() {
   return (
     <div
-      className="mx-auto max-w-md rounded-[2rem] border bg-black p-5 shadow-2xl backdrop-blur sm:p-7"
+      className="mx-auto max-w-xl rounded-[2rem] border bg-black p-4 shadow-2xl backdrop-blur sm:p-5"
       style={{ borderColor: "rgba(184, 138, 46, 0.42)", boxShadow: "0 28px 70px rgba(7, 7, 7, 0.22)" }}
     >
-      <div className="rounded-[1.65rem] border px-5 py-6 text-center" style={{ borderColor: "rgba(215, 183, 101, 0.36)", backgroundColor: colors.black }}>
+      <div className="rounded-[1.65rem] border px-3 py-4 text-center sm:px-4 sm:py-5" style={{ borderColor: "rgba(215, 183, 101, 0.36)", backgroundColor: colors.black }}>
         <img
           src={logoSrc}
           alt="ABC Football - Aaron Bull Coaching & Football logo"
-          className="mx-auto h-auto w-full max-w-sm rounded-2xl object-contain"
+          className="mx-auto h-auto w-full max-w-lg rounded-2xl object-contain"
         />
         <p className="mt-5 text-xs font-black uppercase tracking-[0.24em]" style={{ color: colors.brightGold }}>
           Making football as easy as ABC
@@ -572,7 +572,12 @@ export default function ABCFCWebsite() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
           <a href="#home" onClick={(event) => { event.preventDefault(); scrollToSection("home"); }} className="flex items-center gap-3 text-left" aria-label="Go to home section">
             <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-black shadow-sm" style={{ boxShadow: "inset 0 0 0 2px rgba(215,183,101,0.28)" }}>
-              <img src={logoSrc} alt="ABC Football logo" className="h-full w-full object-cover" />
+              <img
+                src={logoSrc}
+                alt="ABC Football crest"
+                className="h-full w-full object-cover"
+                style={{ objectPosition: "center 22%", transform: "scale(1.6)" }}
+              />
             </div>
             <div>
               <p className="text-sm font-black uppercase tracking-widest" style={{ color: colors.black }}>

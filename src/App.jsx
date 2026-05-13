@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const logoSrc = "/abc-logo.png";
-const crestSrc = "/abc-crest.png";
+const crestSrc = "/abc-logo.png";
 
 const colors = {
   ink: "#171717",

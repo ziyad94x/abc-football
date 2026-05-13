@@ -45,7 +45,7 @@ const values = [
 
 const faqs = [
   {
-    question: "What age group is ABC FC for?",
+    question: "What age group is ABC Football for?",
     answer: "The academy is designed mainly for kids 12 and under, with sessions adjusted depending on age, confidence and ability.",
   },
   {
@@ -68,8 +68,8 @@ function cx(...classes) {
 
 function runContentTests() {
   const requiredCopy = [
-    "ABC FC",
-    "Aaron Bull Coaching & Football Academy",
+    "ABC Football",
+    "Aaron Bull Coaching & Football",
     "Making football as easy as ABC",
     "Programs",
     "About Aaron",
@@ -79,8 +79,8 @@ function runContentTests() {
   ];
 
   const pageCopy = [
-    "ABC FC",
-    "Aaron Bull Coaching & Football Academy",
+    "ABC Football",
+    "Aaron Bull Coaching & Football",
     "Making football as easy as ABC",
     ...tabs.map((tab) => tab.label),
   ].join(" ");
@@ -91,7 +91,9 @@ function runContentTests() {
     faqs.length >= 4 &&
     values.length >= 4 &&
     tabs.length === 5 &&
-    tabs.some((tab) => tab.id === "questions")
+    tabs.some((tab) => tab.id === "questions") &&
+    programs.every((program) => program.title && program.text && program.icon) &&
+    faqs.every((faq) => faq.question && faq.answer)
   );
 }
 
@@ -153,49 +155,40 @@ function CheckIcon() {
   );
 }
 
-function StarRow() {
-  return (
-    <div className="mx-auto mb-5 flex justify-center gap-3" style={{ color: colors.sand }} aria-hidden="true">
-      <span className="text-3xl">★</span>
-      <span className="-mt-1 text-5xl">★</span>
-      <span className="text-3xl">★</span>
-    </div>
-  );
-}
-
 function LogoBadge() {
   return (
     <div
-      className="mx-auto max-w-md rounded-3xl border bg-white p-6 shadow-2xl backdrop-blur sm:p-8"
-      style={{ borderColor: colors.sand, boxShadow: "0 25px 60px rgba(22, 42, 68, 0.12)" }}
+      className="mx-auto max-w-md overflow-hidden rounded-3xl border bg-black p-4 shadow-2xl backdrop-blur sm:p-5"
+      style={{ borderColor: colors.gold, boxShadow: "0 25px 70px rgba(0, 0, 0, 0.28)" }}
     >
-      <div className="rounded-3xl border-2 px-6 py-10 text-center" style={{ borderColor: colors.navy, backgroundColor: colors.cream }}>
-        <StarRow />
-        <div className="text-7xl font-black tracking-tighter sm:text-8xl">
-          <span style={{ color: colors.navy }}>A</span>
-          <span style={{ color: colors.gold }}>B</span>
-          <span style={{ color: colors.navy }}>C</span>
+      <div
+        className="rounded-3xl border p-6 text-center"
+        style={{ borderColor: "rgba(201, 162, 74, 0.45)", backgroundColor: "#050505" }}
+      >
+        <img
+          src="/abc-football-logo.png"
+          alt="ABC Football logo"
+          className="mb-6 block w-full rounded-2xl object-contain"
+          onError={(event) => {
+            event.currentTarget.style.display = "none";
+          }}
+        />
+
+        <div className="mx-auto mb-8 flex h-56 w-56 items-center justify-center rounded-3xl border-2" style={{ borderColor: colors.gold }}>
+          <div>
+            <div className="text-7xl font-black tracking-tighter" style={{ color: colors.gold }}>ABC</div>
+            <div className="mx-auto mt-4 h-1 w-24" style={{ backgroundColor: colors.gold }} />
+            <div className="mt-5 text-5xl" aria-hidden="true">⚽</div>
+          </div>
         </div>
-        <div className="mt-1 text-4xl font-black italic" style={{ color: colors.navy }}>
-          FC
-        </div>
-        <div className="my-6 h-px" style={{ backgroundColor: colors.sand }} />
-        <p className="text-2xl font-black uppercase tracking-widest" style={{ color: colors.navy }}>
-          Aaron Bull
+
+        <p className="text-4xl font-black uppercase tracking-[0.35em]" style={{ color: colors.gold }}>
+          ABC Football
         </p>
-        <p className="mt-2 text-sm font-black uppercase tracking-wider" style={{ color: colors.gold }}>
-          Coaching & Football Academy
+        <div className="mx-auto my-5 h-px w-3/4" style={{ backgroundColor: colors.gold }} />
+        <p className="text-sm font-black uppercase tracking-[0.35em] text-slate-400">
+          Aaron Bull Coaching & Football
         </p>
-        <div className="my-6 h-px" style={{ backgroundColor: colors.sand }} />
-        <p className="text-xs font-black uppercase tracking-widest" style={{ color: colors.navy }}>
-          Making football as easy as ABC
-        </p>
-        <div
-          className="mx-auto mt-8 flex h-24 w-24 items-center justify-center rounded-full border-2 bg-white text-5xl shadow-inner"
-          style={{ borderColor: colors.navy }}
-        >
-          ⚽
-        </div>
       </div>
     </div>
   );
@@ -252,7 +245,7 @@ function AboutPanel() {
           A coach kids can feel comfortable learning from.
         </h2>
         <p className="mt-5 text-lg leading-8 text-slate-600">
-          Aaron Bull Coaching & Football Academy is built around helping young players enjoy football while learning the fundamentals that make the biggest difference: confidence, technique, movement, teamwork and decision-making.
+          Aaron Bull Coaching & Football is built around helping young players enjoy football while learning the fundamentals that make the biggest difference: confidence, technique, movement, teamwork and decision-making.
         </p>
         <p className="mt-4 text-lg leading-8 text-slate-600">
           The tone of the academy should feel warm and trustworthy for parents, while still feeling exciting for kids who love football.
@@ -420,7 +413,7 @@ export default function ABCFCWebsite() {
     <div className="min-h-screen" style={{ backgroundColor: colors.cream, color: colors.ink }}>
       {!contentTestsPassed && (
         <div className="bg-yellow-100 px-5 py-3 text-center text-sm font-bold text-yellow-900">
-          Content check failed: required ABC FC copy is missing.
+          Content check failed: required ABC Football copy is missing.
         </div>
       )}
 
@@ -432,7 +425,7 @@ export default function ABCFCWebsite() {
             </div>
             <div>
               <p className="text-sm font-black uppercase tracking-widest" style={{ color: colors.navy }}>
-                ABC FC
+                ABC Football
               </p>
               <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: colors.gold }}>
                 Aaron Bull Coaching
@@ -502,7 +495,7 @@ export default function ABCFCWebsite() {
                   Making football as easy as <span style={{ color: colors.gold }}>ABC</span>
                 </h1>
                 <p className="max-w-xl text-lg font-medium leading-8 text-slate-600">
-                  ABC FC — Aaron Bull Coaching & Football Academy — helps young players build skills, confidence and love for the game in a calm, positive and parent-friendly environment.
+                  ABC Football — Aaron Bull Coaching & Football — helps young players build skills, confidence and love for the game in a calm, positive and parent-friendly environment.
                 </p>
               </div>
 
@@ -554,7 +547,7 @@ export default function ABCFCWebsite() {
                 </p>
                 <h2 className="mb-4 text-4xl font-black tracking-tight md:text-5xl">Give your child the confidence to enjoy the game.</h2>
                 <p className="max-w-2xl text-lg leading-8 text-slate-200">
-                  Whether your child is brand new to football or already loves the sport, ABC FC keeps sessions positive, structured and easy to follow.
+                  Whether your child is brand new to football or already loves the sport, ABC Football keeps sessions positive, structured and easy to follow.
                 </p>
               </div>
 
@@ -579,7 +572,7 @@ export default function ABCFCWebsite() {
 
       <footer className="border-t px-5 py-8" style={{ borderColor: "rgba(216, 195, 165, 0.6)", backgroundColor: colors.cream }}>
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
-          <p className="text-sm font-bold text-slate-600">© ABC FC — Aaron Bull Coaching & Football Academy</p>
+          <p className="text-sm font-bold text-slate-600">© ABC Football — Aaron Bull Coaching & Football</p>
           <p className="text-sm font-black uppercase tracking-widest" style={{ color: colors.gold }}>
             Making football as easy as ABC
           </p>

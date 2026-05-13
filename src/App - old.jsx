@@ -572,12 +572,7 @@ export default function ABCFCWebsite() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
           <a href="#home" onClick={(event) => { event.preventDefault(); scrollToSection("home"); }} className="flex items-center gap-3 text-left" aria-label="Go to home section">
             <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-black shadow-sm" style={{ boxShadow: "inset 0 0 0 2px rgba(215,183,101,0.28)" }}>
-              <img
-                src={logoSrc}
-                alt="ABC Football crest"
-                className="h-full w-full object-cover"
-                style={{ objectPosition: "center 18%", transform: "scale(2.6)" }}
-              />
+              <img src={logoSrc} alt="ABC Football logo" className="h-full w-full object-cover" />
             </div>
             <div>
               <p className="text-sm font-black uppercase tracking-widest" style={{ color: colors.black }}>

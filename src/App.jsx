@@ -455,12 +455,12 @@ function ContactPanel() {
           Ready to kick off?
         </h2>
         <p className="mt-5 text-lg leading-8 text-slate-600">
-          This section can be connected to Aaron’s phone, email, booking form or social pages once the details are confirmed.
+          azz chuck your details in xxx
         </p>
         <div className="mt-8 rounded-3xl p-6" style={{ backgroundColor: colors.soft }}>
           <p className="text-xl font-black" style={{ color: colors.black }}>Gift draft note</p>
           <p className="mt-2 leading-7 text-slate-600">
-            This site is currently a birthday concept draft. Aaron can review the name, programs, photos, contact details and pricing before it becomes the final version.
+            HAPPY BIRTHDAY LAD - WE'LL FINISH THIS TOGETHER 
           </p>
         </div>
       </div>
